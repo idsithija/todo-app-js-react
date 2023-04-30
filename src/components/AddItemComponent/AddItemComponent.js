@@ -6,28 +6,22 @@ const AddItemComponent = ({ onChange }) => {
 
   const addItemBtnClick = () => {
     onChange(addItemInputRef.current.value);
+    addItemInputRef.current.value = "";
   };
 
   return (
     <Flex maxW="100%" justifyContent="center" flexWrap="wrap">
       <Box flex="80%">
-        <Input
-          w="100%"
-          placeholder="Type Here"
-          borderWidth="1px"
-          borderRadius="lg"
-          p="5px 10px"
-          ref={addItemInputRef}
-        />
+        <Input w="100%" placeholder="Type Here" ref={addItemInputRef} />
       </Box>
       <Flex flex="20%" paddingLeft="10px" justifyContent="end">
         <Button
-          bgColor="gray"
           borderWidth="1px"
           borderRadius="lg"
-          p="2px 10px"
+          borderColor="#dbdbdb"
+          padding="2px 15px"
           h="100%"
-          color="white"
+          backgroundColor="white"
           onClick={addItemBtnClick}
         >
           Add Item

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Flex, Box } from "@chakra-ui/react";
-import SearchComponent from "./AddItemComponent";
-import { ItemListComponent } from "./ItemListComponent";
+import AddItemComponent from "./AddItemComponent/AddItemComponent";
+import ItemListComponent from "./ItemListComponent/ItemListComponent";
 
 const MainComponent = () => {
   const [itemList, setItemList] = useState([]);
@@ -22,8 +22,8 @@ const MainComponent = () => {
       flexWrap="wrap"
     >
       <Box w="100%" borderWidth="1px" borderRadius="lg" p="20px">
-        <SearchComponent onChange={addItemFunc} />
-        <ItemListComponent itemList={itemList} />
+        <AddItemComponent onChange={addItemFunc} />
+        <ItemListComponent itemList={itemList} updatedArray={setItemList} />
       </Box>
     </Flex>
   );
